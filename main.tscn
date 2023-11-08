@@ -1077,3 +1077,6 @@ scale = Vector2(4, 4)
 
 [node name="Object" parent="." instance=ExtResource("3_1gmit")]
 position = Vector2(205.189, -72.9978)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.352941, 0.352941, 0.352941, 1)

@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://vcgf21n4ts1c"]
+[gd_scene load_steps=8 format=3 uid="uid://vcgf21n4ts1c"]
 
 [ext_resource type="Texture2D" uid="uid://csr1rvqae0qwv" path="res://Assets/tf_icon_16.png" id="1_582rq"]
 [ext_resource type="Script" path="res://Switch/object.gd" id="1_neh0q"]
 [ext_resource type="Script" path="res://Switch/zone_trigger.gd" id="2_sq07e"]
+[ext_resource type="Texture2D" uid="uid://4to3d1eb0irx" path="res://Assets/2d_lights_and_shadows_neutral_point_light.webp" id="4_ngvlh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yuhq4"]
 atlas = ExtResource("1_582rq")
@@ -31,6 +32,10 @@ script = ExtResource("2_sq07e")
 [node name="Collider" type="CollisionShape2D" parent="Zone"]
 position = Vector2(0, -4)
 shape = SubResource("CircleShape2D_wvs2d")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(1, 0, 0, 0.784314)
+texture = ExtResource("4_ngvlh")
 
 [connection signal="active_switch" from="Zone" to="." method="_on_zone_active_switch"]
 [connection signal="body_entered" from="Zone" to="Zone" method="_on_body_entered"]
