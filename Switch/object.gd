@@ -23,8 +23,8 @@ func _process(delta):
 func _on_zone_active_switch():
 	state = (state + 1) % Colors.size()
 	change_to_color(state)
-	
-		
+	get_parent().check_all_conditions()	
+
 func change_to_color(color_id: int):
 	$Sprite2D.modulate = Colors[color_id].color
 	$PointLight2D.color = Colors[color_id].color
