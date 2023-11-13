@@ -4,11 +4,11 @@ var state := 0
 
 const Colors := [
 	{
-		"region": Rect2(48,288,16,16),
+		"name": "red",
 		"color": "#ff0000c8"
 	},
 	{
-		"region": Rect2(48,304,16,16),
+		"name": "green",
 		"color": "#00ff00c8"
 	}
 ]
@@ -26,6 +26,6 @@ func _on_zone_active_switch():
 	
 		
 func change_to_color(color_id: int):
-	$Sprite2D.texture.region = Colors[color_id].region
+	$Sprite2D.modulate = Colors[color_id].color
 	$PointLight2D.color = Colors[color_id].color
 	

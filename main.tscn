@@ -1075,8 +1075,13 @@ layer_1/tile_data = PackedInt32Array(-262144, 196608, 6, -327680, 196608, 4, -19
 [node name="Camera2D" type="Camera2D" parent="Player"]
 scale = Vector2(4, 4)
 
-[node name="Object" parent="." instance=ExtResource("3_1gmit")]
-position = Vector2(205.189, -72.9978)
-
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.352941, 0.352941, 0.352941, 1)
+
+[node name="Switches" type="Node" parent="."]
+
+[node name="Switch" parent="Switches" instance=ExtResource("3_1gmit")]
+position = Vector2(215, -96)
+
+[node name="Switch2" parent="Switches" instance=ExtResource("3_1gmit")]
+position = Vector2(-66, -84)

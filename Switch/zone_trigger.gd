@@ -4,11 +4,16 @@ signal active_switch
 
 @export var state = 0
 
+func _ready():
+	state = 0
+
 func _on_body_entered(body):
-	state = 1
+	if body.name == "Player":
+		state = 1
 
 func _on_body_exited(body):
-	state = 0
+	if body.name == "Player":	
+		state = 0
 	
 func action():
 	if state == 1:
