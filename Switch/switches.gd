@@ -1,12 +1,10 @@
 extends Node
 
-func _ready():
-	var a = get_children().map(func(x): return x.state)
-	print(a)
+signal conditions_triggered(value: bool)
 
 func check_all_conditions():
 	var switches = get_children()
 	if switches.filter(func(x): return x.state == 1).size() == switches.size():
-		print("DOOR OPEN")
+		conditions_triggered.emit(true)
 	else:
-		print("DOOR CLOSED")
+		conditions_triggered.emit(false)

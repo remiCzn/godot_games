@@ -123,8 +123,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wl3qd"]
-radius = 22.0
-height = 88.0
+radius = 26.0
+height = 52.0
 
 [node name="Player" type="RigidBody2D"]
 gravity_scale = 0.0
@@ -138,5 +138,5 @@ animation = &"down"
 frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, 16)
+position = Vector2(-2, 45)
 shape = SubResource("CapsuleShape2D_wl3qd")

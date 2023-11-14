@@ -1,12 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://b556h261ltacj"]
+[gd_scene load_steps=10 format=3 uid="uid://df1fyj60hj1es"]
 
-[ext_resource type="PackedScene" uid="uid://bhvm836wcchpa" path="res://Player/player.tscn" id="1_h0wnb"]
-[ext_resource type="Texture2D" uid="uid://h718ud7ilfoq" path="res://Assets/main_sheet.png" id="2_g6ng1"]
-[ext_resource type="PackedScene" uid="uid://vcgf21n4ts1c" path="res://Switch/object.tscn" id="3_1gmit"]
-[ext_resource type="Script" path="res://Switch/switches.gd" id="3_i0ch8"]
+[ext_resource type="Script" path="res://main.gd" id="1_du16h"]
+[ext_resource type="Texture2D" uid="uid://h718ud7ilfoq" path="res://Assets/main_sheet.png" id="2_wessa"]
+[ext_resource type="Script" path="res://Switch/switches.gd" id="3_ton4p"]
+[ext_resource type="PackedScene" uid="uid://vcgf21n4ts1c" path="res://Switch/object.tscn" id="4_7osu5"]
+[ext_resource type="PackedScene" uid="uid://dapvd8qg6ctiv" path="res://Door/door.tscn" id="5_cd2ig"]
+[ext_resource type="PackedScene" uid="uid://csjxm31oej7kn" path="res://Props/Torch.tscn" id="6_1mlvq"]
+[ext_resource type="PackedScene" uid="uid://bhvm836wcchpa" path="res://Player/player.tscn" id="7_d2bqj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fwucl"]
-texture = ExtResource("2_g6ng1")
+texture = ExtResource("2_wessa")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -231,7 +234,7 @@ texture = ExtResource("2_g6ng1")
 3:4/0 = 0
 3:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:4/0/physics_layer_0/angular_velocity = 0.0
-3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, -8, -8, -8)
 4:4/0 = 0
 4:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:4/0/physics_layer_0/angular_velocity = 0.0
@@ -275,7 +278,6 @@ texture = ExtResource("2_g6ng1")
 3:5/0 = 0
 3:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:5/0/physics_layer_0/angular_velocity = 0.0
-3:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:5/0 = 0
 4:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:5/0/physics_layer_0/angular_velocity = 0.0
@@ -307,7 +309,6 @@ texture = ExtResource("2_g6ng1")
 3:6/0 = 0
 3:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:6/0/physics_layer_0/angular_velocity = 0.0
-3:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:6/0 = 0
 4:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:6/0/physics_layer_0/angular_velocity = 0.0
@@ -1055,6 +1056,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_fwucl")
 
 [node name="Main" type="Node"]
+script = ExtResource("1_du16h")
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2(4, 4)
@@ -1071,19 +1073,28 @@ layer_1/y_sort_origin = 0
 layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array(-262144, 196608, 6, -327680, 196608, 4, -196612, 65536, 6, -196611, 65536, 6, -196610, 65536, 6, -196609, 65536, 6, -262143, 65536, 6, -262142, 65536, 6, -262141, 65536, 6, -262140, 65536, 6, -262148, 65536, 4, -262147, 65536, 4, -262146, 65536, 4, -262145, 65536, 4, -327679, 65536, 4, -327678, 65536, 4, -327677, 65536, 4, -327676, 65536, 4, -327675, 196608, 2, -262139, 196608, 2, -196603, 196608, 2, -131067, 196608, 2, -65531, 196608, 2, 5, 196608, 2, 65541, 196608, 2, 131077, 196608, 2, 196613, 196608, 2, 262149, 196608, 2, 327685, 196608, 2, -262149, 196608, 1, -196613, 196608, 1, -131077, 196608, 1, -65541, 196608, 1, -5, 196608, 1, 65531, 196608, 1, 131067, 196608, 1, 196603, 196608, 1, 262139, 196608, 1, 327675, 196608, 1, 393211, 196608, 1, 458748, 262144, 0, 458749, 262144, 0, 458750, 262144, 0, 458751, 262144, 0, 393216, 262144, 0, 393217, 262144, 0, 393218, 262144, 0, 393219, 262144, 0, 393220, 262144, 0, -393211, 262144, 2, 458747, 327680, 1, 393221, 262144, 1, -327684, 262144, 3, -327683, 262144, 3, -327682, 262144, 3, -327681, 262144, 3, -393216, 262144, 3, -393215, 262144, 3, -393214, 262144, 3, -393213, 262144, 3, -393212, 262144, 3, -327685, 327680, 2)
 
-[node name="Player" parent="." instance=ExtResource("1_h0wnb")]
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-scale = Vector2(4, 4)
-
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.352941, 0.352941, 0.352941, 1)
 
 [node name="Switches" type="Node" parent="."]
-script = ExtResource("3_i0ch8")
+script = ExtResource("3_ton4p")
 
-[node name="Switch" parent="Switches" instance=ExtResource("3_1gmit")]
-position = Vector2(215, -96)
+[node name="Switch" parent="Switches" instance=ExtResource("4_7osu5")]
+position = Vector2(32, -64)
 
-[node name="Switch2" parent="Switches" instance=ExtResource("3_1gmit")]
-position = Vector2(-66, -84)
+[node name="Door" parent="." instance=ExtResource("5_cd2ig")]
+position = Vector2(32, -256)
+
+[node name="Torch2" parent="." instance=ExtResource("6_1mlvq")]
+position = Vector2(-48, 307)
+
+[node name="Torch" parent="." instance=ExtResource("6_1mlvq")]
+position = Vector2(112, 304)
+
+[node name="Player" parent="." instance=ExtResource("7_d2bqj")]
+position = Vector2(32, 288)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+scale = Vector2(4, 4)
+
+[connection signal="conditions_triggered" from="Switches" to="." method="_on_switches_conditions_triggered"]
