@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://vcgf21n4ts1c"]
 
 [ext_resource type="Texture2D" uid="uid://csr1rvqae0qwv" path="res://Assets/tf_icon_16.png" id="1_582rq"]
-[ext_resource type="Script" path="res://Switch/object.gd" id="1_neh0q"]
+[ext_resource type="Script" path="res://Switch/switch.gd" id="1_vpbu8"]
 [ext_resource type="Texture2D" uid="uid://4to3d1eb0irx" path="res://Assets/2d_lights_and_shadows_neutral_point_light.webp" id="4_ngvlh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yuhq4"]
@@ -15,7 +15,7 @@ radius = 28.4429
 radius = 59.3043
 
 [node name="Switch" type="StaticBody2D"]
-script = ExtResource("1_neh0q")
+script = ExtResource("1_vpbu8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(4, 4)

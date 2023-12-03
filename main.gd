@@ -1,11 +1,14 @@
 extends Node
 
 func _ready():
-	LevelManager.switches.clear()
+	LevelManager.clear_switches()
 	LevelManager.switches_id = 0
-	LevelManager.conditions_triggered.connect(_on_switches_conditions_triggered)
+	LevelManager.conditions_triggered.connect(condition_triggered)
+	
+	for x in get_tree().get_nodes_in_group("switches"):
+		x.id = LevelManager.add_switch(x.state)
 
-func _on_switches_conditions_triggered(value: bool):
+func condition_triggered(value: bool):
 	if value != $Door.is_open:
 		if value == true:
 			$Door.open()

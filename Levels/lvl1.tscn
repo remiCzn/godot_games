@@ -1,9 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://df1fyj60hj1es"]
+[gd_scene load_steps=9 format=3 uid="uid://df1fyj60hj1es"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_du16h"]
 [ext_resource type="Texture2D" uid="uid://h718ud7ilfoq" path="res://Assets/main_sheet.png" id="2_wessa"]
-[ext_resource type="Script" path="res://Switch/switches.gd" id="3_ton4p"]
-[ext_resource type="PackedScene" uid="uid://vcgf21n4ts1c" path="res://Switch/object.tscn" id="4_7osu5"]
+[ext_resource type="PackedScene" uid="uid://vcgf21n4ts1c" path="res://Switch/switch.tscn" id="4_5gljo"]
 [ext_resource type="PackedScene" uid="uid://dapvd8qg6ctiv" path="res://Door/door.tscn" id="5_cd2ig"]
 [ext_resource type="PackedScene" uid="uid://csjxm31oej7kn" path="res://Props/Torch.tscn" id="6_1mlvq"]
 [ext_resource type="PackedScene" uid="uid://bhvm836wcchpa" path="res://Player/player.tscn" id="7_d2bqj"]
@@ -1076,15 +1075,12 @@ layer_1/tile_data = PackedInt32Array(-262144, 196608, 6, -327680, 196608, 4, -19
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.466667, 0.466667, 0.466667, 1)
 
-[node name="Switches" type="Node" parent="."]
-script = ExtResource("3_ton4p")
-
-[node name="Switch" parent="Switches" instance=ExtResource("4_7osu5")]
-position = Vector2(32, -64)
-
 [node name="Door" parent="." instance=ExtResource("5_cd2ig")]
 position = Vector2(32, -256)
 target_level = 1
+
+[node name="Switch" parent="." instance=ExtResource("4_5gljo")]
+position = Vector2(32, -36)
 
 [node name="Torch2" parent="." instance=ExtResource("6_1mlvq")]
 position = Vector2(-48, 307)
@@ -1097,5 +1093,3 @@ position = Vector2(32, 288)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 scale = Vector2(4, 4)
-
-[connection signal="conditions_triggered" from="Switches" to="." method="_on_switches_conditions_triggered"]

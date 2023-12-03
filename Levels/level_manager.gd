@@ -9,7 +9,7 @@ func clear_switches():
 	switches.clear()
 	switches_id = 0
 	
-func add_switches(init_value: bool) -> int:
+func add_switch(init_value: bool) -> int:
 	switches.append(init_value)
 	switches_id += 1
 	return switches_id - 1
@@ -19,7 +19,7 @@ func change_value(switch_id: int, value: bool):
 	check_all_conditions()
 	
 func check_all_conditions():
-	if switches.filter(func(x): return x.state == true).size() == switches.size():
+	if switches.filter(func(x): return x == true).size() == switches.size():
 		conditions_triggered.emit(true)
 	else:
 		conditions_triggered.emit(false)
