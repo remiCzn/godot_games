@@ -18,4 +18,4 @@ func close():
 
 func _on_area_2d_body_entered(body):
 	if body.name == 'Player' and target_level != null:
-		get_tree().change_scene_to_file(Levels.LevelDB[target_level])
+		Levels.call_deferred("go_to_level", target_level)
