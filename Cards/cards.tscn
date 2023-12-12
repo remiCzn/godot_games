@@ -1,0 +1,67 @@
+[gd_scene load_steps=6 format=3 uid="uid://2dvp2vxkt07k"]
+
+[ext_resource type="Script" path="res://Cards/cards.gd" id="1_2s3ls"]
+[ext_resource type="Texture2D" uid="uid://dbmdhned4s4kk" path="res://Cards/Card.png" id="2_26eyt"]
+[ext_resource type="Texture2D" uid="uid://dwrpulko6qwv2" path="res://Cards/tf_icon_32.png" id="3_ducq5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wr113"]
+font_size = 12
+
+[sub_resource type="LabelSettings" id="LabelSettings_j6dv8"]
+font_size = 12
+
+[node name="Cards" type="Node2D"]
+script = ExtResource("1_2s3ls")
+attack = 10
+defense = 12
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_26eyt")
+
+[node name="AttackLabel" type="Label" parent="."]
+offset_left = -4.0
+offset_top = 33.0
+offset_right = 15.0
+offset_bottom = 52.0
+text = "8"
+label_settings = SubResource("LabelSettings_wr113")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AttackIcon" type="Sprite2D" parent="."]
+position = Vector2(-14, 43)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_ducq5")
+region_enabled = true
+region_rect = Rect2(0, 192, 32, 32)
+
+[node name="DefenseLabel" type="Label" parent="."]
+offset_left = -52.0
+offset_top = 34.0
+offset_right = -33.0
+offset_bottom = 53.0
+text = "7"
+label_settings = SubResource("LabelSettings_j6dv8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DefenseIcon" type="Sprite2D" parent="."]
+position = Vector2(-62, 43)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_ducq5")
+region_enabled = true
+region_rect = Rect2(128, 288, 32, 32)
+
+[node name="MarkerPosition" type="Marker2D" parent="."]
+position = Vector2(0, -160)
+
+[node name="CastFilter" type="ColorRect" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -97.0
+offset_top = 141.0
+offset_right = 97.0
+offset_bottom = 141.0
+grow_horizontal = 2
+color = Color(0, 0, 0, 0.392157)
