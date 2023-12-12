@@ -3,6 +3,10 @@ extends Node
 var idx = 0
 var cast_time: float = 0
 
+var max_size = 1080
+var life = 100
+var max_life = 100
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Cursor.transform = Transform2D(
@@ -22,7 +26,8 @@ func _process(delta):
 		var casted = $PlayerCards.get_child(idx).cast(cast_time)
 		if casted:
 			reset_cast()
-			print("Use card")
+			life -= $PlayerCards.get_child(idx).attack
+			$ColorRect.size.x = max_size * life / max_life
 	else:
 		reset_cast()
 		

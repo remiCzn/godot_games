@@ -43,3 +43,10 @@ rotation = 1.5708
 texture = ExtResource("3_j4nxv")
 region_enabled = true
 region_rect = Rect2(0, 32, 32, 32)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 100.0
+offset_top = 29.0
+offset_right = 1180.0
+offset_bottom = 49.0
+color = Color(1, 0, 0, 1)
