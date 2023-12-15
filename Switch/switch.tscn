@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://csr1rvqae0qwv" path="res://Assets/tf_icon_16.png" id="1_582rq"]
 [ext_resource type="Script" path="res://Switch/switch.gd" id="1_vpbu8"]
+[ext_resource type="PackedScene" uid="uid://mk2ve21g5vy" path="res://Mechanics/Trigger.tscn" id="3_twmgk"]
 [ext_resource type="Texture2D" uid="uid://4to3d1eb0irx" path="res://Assets/2d_lights_and_shadows_neutral_point_light.webp" id="4_ngvlh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yuhq4"]
@@ -10,9 +11,6 @@ region = Rect2(48, 320, 16, 16)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gcygs"]
 radius = 28.4429
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_wvs2d"]
-radius = 59.3043
 
 [node name="Switch" type="StaticBody2D"]
 script = ExtResource("1_vpbu8")
@@ -25,15 +23,10 @@ texture = SubResource("AtlasTexture_yuhq4")
 position = Vector2(0, -4)
 shape = SubResource("CircleShape2D_gcygs")
 
-[node name="Zone" type="Area2D" parent="."]
-
-[node name="Collider" type="CollisionShape2D" parent="Zone"]
-position = Vector2(0, -4)
-shape = SubResource("CircleShape2D_wvs2d")
+[node name="Zone" parent="." instance=ExtResource("3_twmgk")]
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 color = Color(1, 0, 0, 0.784314)
 texture = ExtResource("4_ngvlh")
 
-[connection signal="body_entered" from="Zone" to="." method="_on_zone_body_entered"]
-[connection signal="body_exited" from="Zone" to="." method="_on_zone_body_exited"]
+[connection signal="active_trigger" from="Zone" to="." method="_on_zone_active_trigger"]

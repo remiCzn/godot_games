@@ -7,14 +7,12 @@ var max_size = 1080
 var life = 100
 var max_life = 100
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	$Cursor.transform = Transform2D(
 		$Cursor.transform.get_rotation(),
 		$PlayerCards.get_child(idx).get_marker_position()
 	)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_just_pressed("move_right"):
 		place_marker((idx + 1) % 4)
@@ -37,7 +35,7 @@ func _process(delta):
 		place_marker(1)
 	if Input.is_action_just_pressed("select_3"):
 		place_marker(2)
-	if Input.is_action_just_pressed("select_4"):
+	if Input.is_action_jugit st_pressed("select_4"):
 		place_marker(3)
 	
 func reset_cast():
