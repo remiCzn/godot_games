@@ -122,9 +122,8 @@ animations = [{
 "speed": 6.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wl3qd"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_or0ch"]
 radius = 26.0
-height = 52.0
 
 [node name="Player" type="RigidBody2D"]
 gravity_scale = 0.0
@@ -139,4 +138,4 @@ frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, 45)
-shape = SubResource("CapsuleShape2D_wl3qd")
+shape = SubResource("CircleShape2D_or0ch")

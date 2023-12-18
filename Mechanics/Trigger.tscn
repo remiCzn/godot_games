@@ -5,7 +5,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_wvs2d"]
 radius = 59.3043
 
-[node name="Zone" type="Area2D"]
+[node name="CircleZone" type="Area2D"]
 script = ExtResource("1_q23e2")
 
 [node name="Collider" type="CollisionShape2D" parent="."]

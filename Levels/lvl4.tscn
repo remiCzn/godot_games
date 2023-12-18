@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://t0ubkvpme1in"]
+[gd_scene load_steps=10 format=3 uid="uid://t0ubkvpme1in"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_7s5ij"]
 [ext_resource type="Texture2D" uid="uid://h718ud7ilfoq" path="res://Assets/main_sheet.png" id="2_kplv6"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dapvd8qg6ctiv" path="res://Door/door.tscn" id="4_73t43"]
 [ext_resource type="PackedScene" uid="uid://csjxm31oej7kn" path="res://Props/Torch.tscn" id="6_375ud"]
 [ext_resource type="PackedScene" uid="uid://bhvm836wcchpa" path="res://Player/player.tscn" id="7_cx86t"]
+[ext_resource type="PackedScene" uid="uid://c05yogoennixo" path="res://NPCs/npc.tscn" id="7_y8u3e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fwucl"]
 texture = ExtResource("2_kplv6")
@@ -1078,6 +1079,9 @@ position = Vector2(-48, 307)
 
 [node name="Torch" parent="." instance=ExtResource("6_375ud")]
 position = Vector2(112, 304)
+
+[node name="Npc" parent="." instance=ExtResource("7_y8u3e")]
+position = Vector2(44, -12)
 
 [node name="Player" parent="." instance=ExtResource("7_cx86t")]
 position = Vector2(32, 288)

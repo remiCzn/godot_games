@@ -35,7 +35,7 @@ func _process(delta):
 		place_marker(1)
 	if Input.is_action_just_pressed("select_3"):
 		place_marker(2)
-	if Input.is_action_jugit st_pressed("select_4"):
+	if Input.is_action_just_pressed("select_4"):
 		place_marker(3)
 	
 func reset_cast():
