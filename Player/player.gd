@@ -4,7 +4,7 @@ extends CharacterBody2D
 
 var input_velocity: Vector2 = Vector2.ZERO
 	
-func _unhandled_input(_event: InputEvent) -> void:
+func _unhandled_input(_event: InputEvent) -> void: 
 	var x_axis: float = Input.get_axis("ui_left", "ui_right")
 	var y_axis: float = Input.get_axis("ui_up", "ui_down")
 	

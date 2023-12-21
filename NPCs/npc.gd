@@ -1,14 +1,11 @@
 extends StaticBody2D
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+const box = preload("res://Mechanics/dialogue/balloon.tscn")
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
-
+@export var dialog_resource: DialogueResource
+@export var dialog_start: String = "start"
 
 func _on_active_trigger():
-	DialogueManager.show_example_dialogue_balloon(load("res://main.dialogue"), "start")
+	var dialog: Node = box.instantiate()
+	get_tree().current_scene.add_child(dialog)
+	dialog.start(dialog_resource, dialog_start)
