@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://vcgf21n4ts1c" path="res://Switch/switch.tscn" id="4_5gljo"]
 [ext_resource type="PackedScene" uid="uid://dapvd8qg6ctiv" path="res://Door/door.tscn" id="5_cd2ig"]
 [ext_resource type="PackedScene" uid="uid://csjxm31oej7kn" path="res://Props/Torch.tscn" id="6_1mlvq"]
-[ext_resource type="PackedScene" uid="uid://bhvm836wcchpa" path="res://Player/player.tscn" id="7_d2bqj"]
+[ext_resource type="PackedScene" uid="uid://bhvm836wcchpa" path="res://addons/dialogue_manager/player.tscn" id="7_d2bqj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fwucl"]
 texture = ExtResource("2_wessa")

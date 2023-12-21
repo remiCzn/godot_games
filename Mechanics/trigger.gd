@@ -4,7 +4,7 @@ var is_trigger: bool = false
 
 signal active_trigger
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("action") and is_trigger == true:
 		active_trigger.emit()
 

@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://7yyu5tlhrpl3" path="res://Props/LightFilter.tscn" id="3_mecue"]
 [ext_resource type="PackedScene" uid="uid://dapvd8qg6ctiv" path="res://Door/door.tscn" id="4_73t43"]
 [ext_resource type="PackedScene" uid="uid://csjxm31oej7kn" path="res://Props/Torch.tscn" id="6_375ud"]
-[ext_resource type="PackedScene" uid="uid://bhvm836wcchpa" path="res://Player/player.tscn" id="7_cx86t"]
+[ext_resource type="PackedScene" uid="uid://bhvm836wcchpa" path="res://addons/dialogue_manager/player.tscn" id="7_cx86t"]
 [ext_resource type="PackedScene" uid="uid://c05yogoennixo" path="res://NPCs/npc.tscn" id="7_y8u3e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fwucl"]

@@ -6,9 +6,9 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 
 func _on_active_trigger():
-	print("Hey")
+	DialogueManager.show_example_dialogue_balloon(load("res://main.dialogue"), "start")

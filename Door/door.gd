@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-@export var target_level: Levels.LevelType = Levels.LevelType.LVL4
+@export var target_level: LevelManager.LevelType = LevelManager.LevelType.LVL4
 
 var is_open: bool = false
 
@@ -18,4 +18,4 @@ func close():
 
 func _on_area_2d_body_entered(body):
 	if body.name == 'Player' and target_level != null:
-		Levels.call_deferred("go_to_level", target_level)
+		LevelManager.call_deferred("go_to_level", target_level)
