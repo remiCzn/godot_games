@@ -1,9 +1,8 @@
 ~ start
-[speed=1]
-Orc: [[Hello|Hi]], do you want to fight.
+Orc: [[Hello|Hi]], do you want to fight?
 Orc: I'm very angry...
 - Let's fight!
 	Orc: Let's test your bravery 
 	=> END
-- Bye => END
+- No, thank you => END
 => END
