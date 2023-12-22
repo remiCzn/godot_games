@@ -1,16 +1,20 @@
-[gd_scene load_steps=7 format=3 uid="uid://vcgf21n4ts1c"]
+[gd_scene load_steps=8 format=3 uid="uid://vcgf21n4ts1c"]
 
 [ext_resource type="Texture2D" uid="uid://csr1rvqae0qwv" path="res://Assets/tf_icon_16.png" id="1_582rq"]
 [ext_resource type="Script" path="res://Switch/switch.gd" id="1_vpbu8"]
-[ext_resource type="PackedScene" uid="uid://mk2ve21g5vy" path="res://Mechanics/Trigger.tscn" id="3_twmgk"]
 [ext_resource type="Texture2D" uid="uid://4to3d1eb0irx" path="res://Assets/2d_lights_and_shadows_neutral_point_light.webp" id="4_ngvlh"]
+[ext_resource type="PackedScene" uid="uid://cge8n4n5uiuuv" path="res://Mechanics/actionable/actionable.tscn" id="4_ykv3n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yuhq4"]
 atlas = ExtResource("1_582rq")
 region = Rect2(48, 320, 16, 16)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_gcygs"]
-radius = 28.4429
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5x0cs"]
+radius = 17.0
+height = 48.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6wiew"]
+radius = 50.0
 
 [node name="Switch" type="StaticBody2D"]
 script = ExtResource("1_vpbu8")
@@ -20,13 +24,18 @@ scale = Vector2(4, 4)
 texture = SubResource("AtlasTexture_yuhq4")
 
 [node name="Body" type="CollisionShape2D" parent="."]
-position = Vector2(0, -4)
-shape = SubResource("CircleShape2D_gcygs")
-
-[node name="Zone" parent="." instance=ExtResource("3_twmgk")]
+position = Vector2(0, 16)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_5x0cs")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 color = Color(1, 0, 0, 0.784314)
 texture = ExtResource("4_ngvlh")
 
-[connection signal="active_trigger" from="Zone" to="." method="_on_zone_active_trigger"]
+[node name="Actionable" parent="." instance=ExtResource("4_ykv3n")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
+position = Vector2(0, -4)
+shape = SubResource("CircleShape2D_6wiew")
+
+[connection signal="interact" from="Actionable" to="." method="_on_actionable_triggered"]

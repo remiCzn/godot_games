@@ -11,8 +11,8 @@ func update_color():
 	var type = ColorData.type.GREEN if state else ColorData.type.RED
 	$Sprite2D.modulate = ColorData.data[type].color
 	$PointLight2D.color = ColorData.data[type].color
-	
-func _on_zone_active_trigger():
+
+func _on_actionable_triggered():
 	state = !state
 	update_color()
 	LevelManager.change_value(id, state)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bhvm836wcchpa"]
+[gd_scene load_steps=18 format=3 uid="uid://bhvm836wcchpa"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_lypiq"]
 [ext_resource type="Texture2D" uid="uid://dwfyjr1b368v4" path="res://Player/chara1_2.png" id="2_t0vtl"]
@@ -122,7 +122,11 @@ animations = [{
 "speed": 6.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_or0ch"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_152s7"]
+radius = 11.0
+height = 48.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nfaqn"]
 radius = 26.0
 
 [node name="Player" type="CharacterBody2D"]
@@ -135,5 +139,15 @@ animation = &"down"
 frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, 45)
-shape = SubResource("CircleShape2D_or0ch")
+position = Vector2(-2, 48)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_152s7")
+
+[node name="Direction" type="Marker2D" parent="."]
+position = Vector2(-2, 26)
+
+[node name="ActionableFinder" type="Area2D" parent="Direction"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/ActionableFinder"]
+position = Vector2(0, 34)
+shape = SubResource("CircleShape2D_nfaqn")
