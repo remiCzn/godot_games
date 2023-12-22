@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 LevelManager="*res://Levels/level_manager.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+CombatManager="*res://Cards/combat_manager.gd"
 
 [display]
 

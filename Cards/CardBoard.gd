@@ -37,6 +37,9 @@ func _process(delta):
 		place_marker(2)
 	if Input.is_action_just_pressed("select_4"):
 		place_marker(3)
+		
+	if life <= 0:
+		CombatManager.finish_combat()
 	
 func reset_cast():
 	cast_time = 0
