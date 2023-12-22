@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-@export var target_level: LevelManager.LevelType = LevelManager.LevelType.LVL4
+@export var target_level: LevelManager.LevelType = LevelManager.LevelType.LVL0
 
 var is_open: bool = false
 

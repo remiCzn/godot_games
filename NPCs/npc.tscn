@@ -1,8 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://c05yogoennixo"]
+[gd_scene load_steps=8 format=3 uid="uid://c05yogoennixo"]
 
 [ext_resource type="Texture2D" uid="uid://78dbxqw6i0ns" path="res://NPCs/orc1.png" id="1_e5egc"]
 [ext_resource type="Script" path="res://NPCs/npc.gd" id="1_ik07r"]
-[ext_resource type="PackedScene" uid="uid://mk2ve21g5vy" path="res://Mechanics/Trigger.tscn" id="2_arxdc"]
+[ext_resource type="PackedScene" uid="uid://cge8n4n5uiuuv" path="res://Mechanics/actionable/actionable.tscn" id="2_arxdc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cldif"]
 atlas = ExtResource("1_e5egc")
@@ -19,8 +19,12 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_t004v"]
-radius = 26.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xtp5l"]
+radius = 11.0
+height = 48.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w5ejn"]
+radius = 52.0
 
 [node name="Npc" type="StaticBody2D"]
 script = ExtResource("1_ik07r")
@@ -30,10 +34,13 @@ sprite_frames = SubResource("SpriteFrames_2lla1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, 45)
-shape = SubResource("CircleShape2D_t004v")
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_xtp5l")
 
-[node name="Zone" parent="." instance=ExtResource("2_arxdc")]
-position = Vector2(-2, 47)
-scale = Vector2(0.8, 0.8)
+[node name="Actionable" parent="." instance=ExtResource("2_arxdc")]
 
-[connection signal="active_trigger" from="Zone" to="." method="_on_active_trigger"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
+position = Vector2(-2, 46)
+shape = SubResource("CircleShape2D_w5ejn")
+
+[connection signal="interact" from="Actionable" to="." method="_on_active_trigger"]
