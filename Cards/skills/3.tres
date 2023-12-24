@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Skill" load_steps=2 format=3 uid="uid://hcvew00hninc"]
+
+[ext_resource type="Script" path="res://Cards/skills.gd" id="1_hebsm"]
+
+[resource]
+script = ExtResource("1_hebsm")
+name = "Slash"
+attack = 6
+defense = 3
+cast_time = 4.0

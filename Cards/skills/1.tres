@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Skill" load_steps=2 format=3 uid="uid://dwixvfcjir742"]
+
+[ext_resource type="Script" path="res://Cards/skills.gd" id="1_ueos7"]
+
+[resource]
+script = ExtResource("1_ueos7")
+name = "Base attack"
+attack = 8
+defense = 10
+cast_time = 0.3

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Skill" load_steps=2 format=3 uid="uid://dx161j37m8e2f"]
+
+[ext_resource type="Script" path="res://Cards/skills.gd" id="1_eyelm"]
+
+[resource]
+script = ExtResource("1_eyelm")
+name = "Big Hit"
+attack = 24
+defense = 3
+cast_time = 5.0

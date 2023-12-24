@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://dglwjfoprbih8"]
+[gd_scene load_steps=8 format=3 uid="uid://dglwjfoprbih8"]
 
 [ext_resource type="PackedScene" uid="uid://2dvp2vxkt07k" path="res://Cards/cards.tscn" id="1_32cli"]
 [ext_resource type="Script" path="res://Cards/CardBoard.gd" id="1_rj5ql"]
 [ext_resource type="Texture2D" uid="uid://dwrpulko6qwv2" path="res://Cards/tf_icon_32.png" id="3_j4nxv"]
+[ext_resource type="Resource" uid="uid://dwixvfcjir742" path="res://Cards/skills/1.tres" id="3_qe1ak"]
+[ext_resource type="Resource" uid="uid://cry3sjgovaogr" path="res://Cards/skills/2.tres" id="4_w4p7c"]
+[ext_resource type="Resource" uid="uid://hcvew00hninc" path="res://Cards/skills/3.tres" id="5_a16e0"]
+[ext_resource type="Resource" uid="uid://dx161j37m8e2f" path="res://Cards/skills/4.tres" id="6_6cjsi"]
 
 [node name="CardBoard" type="Node"]
 script = ExtResource("1_rj5ql")
@@ -12,29 +16,22 @@ script = ExtResource("1_rj5ql")
 [node name="Cards2" parent="PlayerCards" instance=ExtResource("1_32cli")]
 position = Vector2(367, 578)
 scale = Vector2(0.9, 0.9)
-defense = 10
-cast_time = 0.3
+skill = ExtResource("3_qe1ak")
 
 [node name="Cards3" parent="PlayerCards" instance=ExtResource("1_32cli")]
 position = Vector2(567, 578)
 scale = Vector2(0.9, 0.9)
-attack = 8
-defense = 2
-cast_time = 2.0
+skill = ExtResource("4_w4p7c")
 
 [node name="Cards4" parent="PlayerCards" instance=ExtResource("1_32cli")]
 position = Vector2(767, 578)
 scale = Vector2(0.9, 0.9)
-attack = 6
-defense = 3
-cast_time = 4.0
+skill = ExtResource("5_a16e0")
 
 [node name="Cards5" parent="PlayerCards" instance=ExtResource("1_32cli")]
 position = Vector2(967, 578)
 scale = Vector2(0.9, 0.9)
-attack = 24
-defense = 3
-cast_time = 5.0
+skill = ExtResource("6_6cjsi")
 
 [node name="Cursor" type="Sprite2D" parent="."]
 position = Vector2(367, 419)

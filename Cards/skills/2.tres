@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Skill" load_steps=2 format=3 uid="uid://cry3sjgovaogr"]
+
+[ext_resource type="Script" path="res://Cards/skills.gd" id="1_jtpkp"]
+
+[resource]
+script = ExtResource("1_jtpkp")
+name = "Sword hit"
+attack = 8
+defense = 2
+cast_time = 2.0

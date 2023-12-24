@@ -24,19 +24,14 @@ func _process(delta):
 		var casted = $PlayerCards.get_child(idx).cast(cast_time)
 		if casted:
 			reset_cast()
-			life -= $PlayerCards.get_child(idx).attack
+			life -= $PlayerCards.get_child(idx).skill.attack
 			$ColorRect.size.x = max_size * life / max_life
 	else:
 		reset_cast()
-		
-	if Input.is_action_just_pressed("select_1"):
-		place_marker(0)
-	if Input.is_action_just_pressed("select_2"):
-		place_marker(1)
-	if Input.is_action_just_pressed("select_3"):
-		place_marker(2)
-	if Input.is_action_just_pressed("select_4"):
-		place_marker(3)
+	
+	for n in range(0,4):
+		if Input.is_action_just_pressed("select_{n}".format({"n": n + 1})):
+			place_marker(n)
 		
 	if life <= 0:
 		CombatManager.finish_combat()

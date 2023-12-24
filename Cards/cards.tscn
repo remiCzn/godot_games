@@ -12,8 +12,6 @@ font_size = 12
 
 [node name="Cards" type="Node2D"]
 script = ExtResource("1_2s3ls")
-attack = 10
-defense = 12
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_26eyt")
